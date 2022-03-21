@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+
+<main>
+  <div class="container">
+
+    <h1>Tartaruga</h1>
+
+    <div>
+      <h2>
+        Espécie:
+      </h2>
+      {{ turtle.especie }}
+    </div>
+    <div>
+      <h2>
+        Tamanho:
+      </h2>
+      {{ turtle.tamanho }}
+    </div>
+    <div>
+      <h2>
+        Localização:
+      </h2>
+      {{ turtle.localizacao }}
+    </div>
+    <div>
+      <h2>
+        Data da localização:
+      </h2>
+      {{ turtle.data_registro }}
+    </div>
+    <div>
+      <a href="{{ url_for('turtle_edit', id=turtle.id)}}">Editar tartaruga</a>
+    </div>
+    <div>
+      <a class="link-danger" href="{{ url_for('detele_turtle', id=turtle.id) }}">Deletar tartaruga</a>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
